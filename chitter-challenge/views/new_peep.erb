@@ -1,0 +1,19 @@
+<!-- GET /peeps/new -->
+
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/plain.css">
+  </head>
+  <body>
+    <h1>Post a new peep:</h1>
+
+    <form method="POST" action="/peeps">
+    <div class="container">
+            <label>Enter your peep:</label><br><br>   
+            <input style="height:200px; width:500px;" type="message_content" placeholder="Write content here" name="message_content" required />  
+            &ensp;<button type="submit">Post</button> 
+        </div>   
+    </form>
+    <h4><a href="/peeps">Back to peeps</a></h4>  
+  </body>
+</html>

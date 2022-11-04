@@ -1,0 +1,22 @@
+<!-- GET /users -->
+
+<html>
+  <head>
+  <style>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/lightblue.css">
+  </style>
+  </head>
+  <body>
+    <h1>List of Users:</h1>
+    
+      <% @users.each do |user| %>
+        <div>
+            <!-- <p>Name: <a href='/users/<%= user.id %>'><%= user.name %></a></p> -->
+            <p>Name: <b><%= user.name %></b></p>
+            <p>Email: <%= user.email %></p>
+            <p>Password: <%= user.password %></p>
+        </div>
+      <% end %>
+
+  </body>
+</html>

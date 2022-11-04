@@ -1,0 +1,12 @@
+body {
+  background-color: #a9c7ee;
+  background-image: url("http://clipart-library.com/images/zTXeRByKc.png");
+}
+h1 {
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  font-family: times;
+  color: white;
+}
+.Peep {
+  text-indent: 25px;
+}

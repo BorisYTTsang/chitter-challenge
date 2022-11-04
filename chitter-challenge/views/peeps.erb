@@ -1,0 +1,43 @@
+<!-- GET /peeps -->
+
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/lightblue.css">
+  </head>
+  <body>
+    <% if @view == "all" %>
+      <h1>Hey, <%= @user_name %>! Here are all peeps:</h1>
+      <nav>
+        <a>View all peeps</a> - 
+        <a href="/peeps/user">View your peeps</a> - 
+        <a href="/peeps/new">Post a new peep</a>
+      </nav><br>
+      <% @peeps.each do |peep| %>
+        <div>
+          <p><%= peep.time_created %> by <%= session[:user_name] %>:</p>
+          <p class="Peep"><%= peep.message_content %></p>
+        </div>
+      <% end %><br>
+      <form action="/logout" method="POST">
+        <input type="submit" value="Logout">
+      </form>
+    <% elsif @view == "user" %>
+      <h1>Hey, <%= @user_name %>! Here are all peeps:</h1>
+      <nav>
+        <a href="/peeps/all">View all peeps</a> - 
+        <a>View your peeps</a> - 
+        <a>Post a new peep</a>
+      </nav><br>
+      <% user_peeps = @peeps.select { |peep| peep.user_id == session[:user_id] } %>
+      <% user_peeps.each do |peep| %>
+        <div>
+          <p><%= peep.time_created %> by <%= session[:user_name] %>:</p>
+          <p class="Peep"><%= peep.message_content %></p>
+        </div>
+      <% end %><br>
+      <form action="/logout" method="POST">
+        <input type="submit" value="Logout">
+      </form>
+    <% end %>
+  </body>
+</html>
